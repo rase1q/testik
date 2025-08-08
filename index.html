@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My lifecell</title>
+	<style>
+	.navigation-main li a span {
+		font-size: 15px;
+		font-weight: bold;
+	}
+	.navigation li ul li a span {
+        font-size: 14px;
+		font-weight: normal;
+    }
+</style>
+
+	<!-- Global stylesheets -->
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">-->
+	<link href="css/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="css/assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+	<link href="css/core.css" rel="stylesheet" type="text/css">
+	<link href="css/components.css" rel="stylesheet" type="text/css">
+	<link href="css/colors.css" rel="stylesheet" type="text/css">
+	<link href="css/theme/default.css" id="shtylesheet" rel="stylesheet" type="text/css">
+
+	<!-- /global stylesheets -->
+	<!-- Core JS files -->
+		<script type="text/javascript" src="css/assets/js/plugins/loaders/pace.min.html"></script>
+		<script type="text/javascript" src="css/assets/js/core/libraries/jquery.min.html"></script>
+		<script type="text/javascript" src="css/assets/js/core/libraries/bootstrap.min.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/loaders/blockui.min.html"></script>
+		<!-- /core JS files -->
+
+		<!-- Theme JS files -->
+		<script type="text/javascript" src="css/assets/js/plugins/visualization/d3/d3.min.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/visualization/d3/d3_tooltip.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/forms/styling/switchery.min.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/forms/styling/uniform.min.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/forms/selects/bootstrap_multiselect.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/ui/moment/moment.min.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/pickers/daterangepicker.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/ui/nicescroll.min.html"></script>
+
+		<script type="text/javascript" src="css/assets/js/core/app.html"></script>
+		<script type="text/javascript" src="css/assets/js/pages/dashboard.html"></script>
+		<script type="text/javascript" src="css/assets/js/pages/layout_fixed_custom.html"></script>
+		<script type="text/javascript" src="css/assets/js/autocopy.html"></script>
+		<script type="text/javascript" src="css/assets/js/plugins/ui/nicescroll.min.html"></script>
+		<script type="text/javascript" src="js/pace.min.html"></script>
+		<script type="text/javascript" src="js/jquery.min.html"></script>
+		<script type="text/javascript" src="js/bootstrap.min.html"></script>
+		<script type="text/javascript" src="js/blockui.min.html"></script>
+		<script type="text/javascript" src="js/steps.min.html"></script>
+		<script type="text/javascript" src="js/select2.min.html"></script>
+		<script type="text/javascript" src="js/uniform.min.html"></script>
+		<script type="text/javascript" src="js/validate.min.html"></script>
+		<script type="text/javascript" src="js/wizard_steps.html"></script>
+		<script type="text/javascript" src="js/pace.min.html"></script>
+		<script type="text/javascript" src="js/sweetalert.js"></script>
+		<script type="text/javascript" src="js/calculator.js"></script>
+
+		<script type="text/javascript" src="js/Edit/monitoring.js"></script>
+		<script src="js/change_main_theme.js"></script>
+
+	<!-- /theme JS files -->
+
+
+	<style type="text/css">
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+			.col-lg-9.col-md-9 {
+				display: flex !important;
+				justify-content: space-between !important;
+			}
+
+			.image_monitoring img {
+				width: 164px !important;
+				height: 220px !important;
+			}
+		}
+		
+		input, select {
+			color: black
+		}
+		input {
+			text-align: center;
+			width: 80px
+		}
+		body {
+			overflow-x: hidden;
+		}
+		h4 {
+			text-align: left;
+		}
+		.btn {
+			margin: 3px;
+		}
+		.monitoring_label {
+			color: white;
+			font-size: 30px;
+			position: center;
+
+		}
+
+		.monitoring_time_style {
+			background-color: rgba(0,0,0,0.3);
+			width: auto;
+			height: 23px;
+			text-align: center;
+			border: 2px rgba(0,0,0,0.2) solid;
+		}
+		label {
+			font-weight: bold
+			border:1px black solid;
+			color: white
+		}
+		
+		
+		.image_monitoring {
+			border:2px rgba(0,0,0,0.2) solid;
+			width: 164px !important;
+			height: 220px !important;
+		}
+
+		[class^="TL_foto"]:hover{
+			box-shadow: 0 1px 3px 5px rgb(235,213,57), inset 0 0 0 2em rgba(255,255,255,.5);
+		}
+
+		.calculator__ACHT{
+			width: 380px;
+			height: 460px;
+			border: 2px solid black;
+			margin: 50px 50px 0;
+			text-align: center;
+			background-color: white;
+			box-shadow: 0 0 30px grey;
+			border-radius: 4px;
+		}
+
+		.calculator__AUX{
+			width: 380px;
+			height: 400px;
+			border: 2px solid black;
+			margin: -433px 450px 0;
+			text-align: center;
+			background-color: white;
+			box-shadow: 0 0 30px grey;
+			border-radius: 4px;
+		}
+
+		.calculator__form {
+			height: 100%;
+			padding: 20px;
+		}
+
+		.calculator__row {
+			margin: 10px 0;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.calculator__display {
+			margin: 0 0 0px;
+			width: 100%;
+			border: 1px solid darkslateblue;
+			padding: 4px 2px;
+			text-align: center;
+			font: 700 16px/1 Arial, sans-serif;
+			color: black;
+			background-color: whitesmoke;
+		}
+
+		.calculator__key {
+			width: 350px;
+			height: 30px;
+			cursor: pointer;
+			border: none;
+			font-weight: bold;
+			transition: all .2s;
+			text-transform: uppercase;
+		}
+
+		.calculator__key--equal {
+			width: 350px;
+			height: 30px;
+		}
+
+		.calculator__key:hover {
+			background-color: yellow;
+			font-weight: 700;
+		}
+
+		.calculator__key::-moz-focus-inner {
+			border: none
+		}
+		.label{
+			text-align: center;
+			font: 700 16px/1 Arial, sans-serif;
+			color: black;
+		}
+/* НОВІ СТИЛІ ДЛЯ МОНІТОРИНГУ */
+.monitoring-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.2vmin;
+    padding: 1.5vmax;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.monitoring-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.2vmax;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.4vmin 1.5vmin rgba(0,0,0,0.1);
+    aspect-ratio: 0.75;
+    display: flex;
+    flex-direction: column;
+}
+
+.monitoring-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+.monitoring-time {
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
+    color: white;
+    padding: 0.6vmax 1vmax;
+    border-radius: 2vmax;
+    margin: 0.8vmax 0;
+    font-size: clamp(12px, 1.5vmin, 14px);
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .monitoring-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+</style>
+</head>
+<body class="navbar-top" onload="clock();"  id="main" >
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top" id="main">
+	<div class="navbar-header" onclick="hide_unhide()">
+
+		<!-- Логотип -->
+<a class="navbar-brand" href="">
+	<img src="main-logo.png" align="center" style="width: 85px; height: 22px; margin: 0px; margin-left:-10px" alt="">
+</a>
+
+		<!-- Пливучий текст -->
+		<div class="ticker-container">
+			<div class="ticker-text">
+				<b>♥ ТОП КОМАНДИ ЧЕРВНЯ ♥</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<i>Performance</i> - <b><span style="color: #ffc40c;">Yehor Perevertailo</span></b> - 4,49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<i>Sales</i> - <b><span style="color: #ffc40c;">Maksym AMaksymenko</span></b> - 6,58%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+				<i>Quality</i> - <b><span style="color: #ffc40c;">Kostiantyn Pcholkin</span></b> - 4,73
+			</div>
+		</div>
+
+		<style>
+		.ticker-container {
+		  position: absolute;
+		  top: 1vh;
+		  left: 18%;
+		  right: 5%;
+		  overflow: hidden;
+		  pointer-events: none;
+		  white-space: nowrap;
+		  font-weight: bold;
+		  color: white;
+		  font-size: 1.1vw;
+		  z-index: 10;
+		  max-width: 55%;
+		}
+
+			.ticker-text {
+			display: inline-block;
+			padding-left: 100%;
+			animation: scroll-text 35s linear infinite;
+			width: max-content;
+			margin-right: 5vw;
+		}
+
+		@keyframes scroll-text {
+			0% {
+				transform: translateX(0%);
+			}
+			100% {
+			transform: translateX(-100%);
+			}
+		}
+		</style>
+
+		<!-- Мобільні кнопки -->
+		<ul class="nav navbar-nav pull-right visible-xs-block">
+			<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+			<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+		</ul>
+	</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<div style="
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				margin-left: auto;
+				padding-right: 0px;
+				width: fit-content;
+				margin-top: 5px;
+			">
+				<!-- Вибір теми -->
+				<select id="selectTheme" onchange="changeStylesheet(this.value)" style="height: 40px; font-weight: bold; font-size: 16px;">
+					<option value="dark.css">Dark</option>
+					<option value="grey.css">Grey</option>
+					<option value="pastel.css">Brown</option>
+					<option value="pastel purple.css">Purple</option>
+					<option value="old.css">Old</option>
+					<option value="DVL.css">DVL</option>
+				</select>
+
+				<!-- Іконка та час -->
+				<div style="display: flex; align-items: center; gap: 6px;">
+					<i class="glyphicon glyphicon-time" style="font-size: 16px;"></i>
+					<span id="doc_time_1" class="text-semibold" style="font-size: 16px; font-weight: bold;"></span>
+				</div>
+
+				<!-- Лого -->
+				<a href="https://portal.globalbilgi.com.ua/" target="_blank">
+					<img id="main" src="main-logo-12.png" style="width: 140px; height: 40px;">
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+		</div>
+	</div>	<!-- /main navbar -->
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main sidebar-fixed">
+				<div class="sidebar-content">
+					<!-- Main navigation -->
+				<div class="sidebar-category sidebar-category-visible">
+					<div class="category-content no-padding">
+						<ul class="navigation navigation-main navigation-accordion" style="cursor: pointer;">
+							<li><a href="scorecard_new.xlsx"><i class="glyphicon glyphicon-list-alt"></i><span class="text-semibold">Цілі</span></a></li>
+							<li><a href="statistic/scorecard_new.xlsm"><i class="glyphicon glyphicon-list-alt"></i><span class="text-semibold"> Попередня оцінка</span></a></li>
+							<li><a href="http://shiftswapper.gbukr.entp:8033/" target="_blank" data-toggle="tooltip" title="Логін у форматі: YRoshcha. Пароль як у windows"><i class="glyphicon glyphicon-list-alt"></i><span class="text-semibold" style="color: white">Розклад</span></a></li>
+							<li hidden="hidden"><a href="\\KV1-FS1-V\CallCenter\Corporate\AChernenko\Мой лайф\Мониторинг ТЛ\TL schedule (для ТЛ и агентов)"  id="scheduleTL_inbound"><i class="glyphicon glyphicon-list-alt"></i><span class="text-semibold" style="color: yellow">Розклад TL</span></a></li>						
+							<li><a><i class="glyphicon glyphicon-user"></i><span id=""><b>Робочі посилання</b></span></a>
+								<ul>
+									<li><a href="https://sirius.globalbilgi.com.ua/" target="_blank" data-toggle="tooltip" title="Логін: короткий або цифровой. Пароль як у windows"><span class="text-semibold">GBWEBPHONE</span></a></li>
+									<li><a href="https://sirius1.globalbilgi.com.ua/" target="_blank" data-toggle="tooltip" title="Логін: короткий або цифровой. Пароль як у windows"><span class="text-semibold">GBWEBPHONE <span style="font-size: 12px;color: #f6bf0d;">альтернативне посилання</span></span></a></li>
+									<li><a href="https://iguana.lifecell.com.ua/" target="_blank" data-toggle="tooltip" title="Логін у форматі: YRoshcha@gbukr.entp. Пароль як у windows"><span class="text-semibold">Iguana IV</span></a></li>
+									<li><a href="https://bpm.astelit.ukr/ProcessPortal/login.jsp" target="_blank" data-toggle="tooltip" title="Логін у форматі: yehor.roshcha@gbukr.entp. Пароль як у windows"><span class="text-semibold">BPM</span></a></li>
+									<li><a href="https://login.omnicell.ua/login" target="_blank" data-toggle="tooltip"><span class="text-semibold">Omnicell</span></a></li>
+									<li hidden="hidden"><a href="http://bpms.astelit.ukr" target="_blank" data-toggle="tooltip" title="Логін у форматі: yehor.roshcha@gbukr.entp. Пароль як у windows"><span class="text-semibold">BPMS</span></a></li>
+									<li><a href="https://infolife.lifecell.com.ua/" target="_blank"><span class="text-semibold">infolife</span></a></li>
+									<li><a href="https://mail.globalbilgi.com.ua/owa" target="_blank" data-toggle="tooltip"><span class="text-semibold">Пошта</span></a></li>
+									<li><a href="https://owa.globalbilgi.com.ua/owa/" target="_blank" data-toggle="tooltip"><span class="text-semibold">Пошта&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 12px;color: #f6bf0d;">альтернативне посилання</span></span></a></li>
+									<li><a href="http://10.1.48.121:8080/webota/" target="_blank" data-toggle="tooltip" title="Логін: cc2. Пароль: C@llCenL!ght"><span class="text-semibold">ADMS</span></a> <div style="position: relative; margin-left: 50%;color: #f6bf0d;"> cc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C@l1CenAdmin </div> </li>
+									<li><a href="https://webnpq.lifecell.com.ua/rn/ge2" target="_blank"><span class="text-semibold">Мапа 3G/4.5G</span></a> <div style="position: relative; margin-left: 50%;color: #f6bf0d;"> callcenter_ge callcenter_20210205 </div></li>
+									<li><a href="https://webnpq.lifecell.com.ua/tools/bo_cc_tools/incident_map" target="_blank"><span class="text-semibold">Мапа інцидентів</span></a> <div style="position: relative; margin-left: 50%;color: #f6bf0d;"> callcenter_ge  callcenter_20210205 </div></li>
+									<li hidden="hidden"><a href="http://192.168.16.39/user/loginindex.screen" target="_blank"><span class="text-semibold">Сховище Meloring</span></a></li>
+									<li><a href="https://admin-meloring.lifecell.ua/#!login" target="_blank"><span class="text-semibold">Meloring по номеру</span></a></li>
+									<li><a href="https://zakon.rada.gov.ua/rada/show/n0001698-03" target="_blank"><span class="text-semibold">Коди світу</span></a></li>
+									<li hidden="hidden"><a href="http://www.ukrtelecom.ua/reference/trunkline_code/code" target="_blank"><span class="text-semibold">Коди України ❤</span></a></li>
+									<li hidden="hidden"><a href="http://andreyl.astelit.ukr/ivr/" target="_blank"><span class="text-semibold">Дерево IVR</span></a></li>
+									<li><a href="http://infolife.astelit.ukr/otherservices/listbox/" target="_blank"><span class="text-semibold">listbox</span></a></li>
+									<li><a href="https://www.devicespecifications.com/ru" target="_blank"><span class="text-semibold">Інформація про телефони</span></a></li>
+									<li><a href="http://tms.gbukr.entp/" target="_blank" data-toggle="tooltip" title="Логін у форматі: YRoshcha. Пароль як у windows"><span class="text-semibold"> TMS</span></a></li>
+									<li><a href="https://aqos.gbukr.entp/#/login" target="_blank" data-toggle="tooltip" ><span class="text-semibold">AQoS</span></a></li>
+									<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSefmavE6k214g9WNR_HaHwAzmmFhp5OlnbwW8As5CrP0Y56dg/viewform" target="_blank" data-toggle="tooltip" ><span class="text-semibold">Форма фіксації вилогіну</span></a></li>
+									<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K-khjNHaUnMJRlMR3rG-jU03ythzQnIARbKH5qEiDRh79g/viewform" target="_blank" data-toggle="tooltip" ><span class="text-semibold">Форма фіксаціі завершень дзвінків, по тех. причинам</span></a></li>
+								</ul>
+							</li>
+							<li><a><i class="glyphicon glyphicon-education"></i><span id="main"><b>Помічники агенту</b></span></a>
+								<ul>
+									<li><a href="http://webchat_templates.globalbilgi.com.ua/" target="_blank"><span class="text-semibold">Шаблони WebChat</span></a></li>
+									<li><a href="http://telesales_templates.globalbilgi.com.ua/" target="_blank"><span class="text-semibold">Шаблони Telesales</span></a></li>
+									<li><a href="http://portal_pq.globalbilgi.com.ua/" target="_blank"><i class="glyphicon glyphicon-grain"></i><span class="text-semibold">Portal PQ</span></a></li>
+									<li hidden="hidden"><a href="./CC-tech/index.html" target="_blank"><span class="text-semibold">Налаштування телефонів і ПК</span></a></li>
+									<li><a id="calculator_acht" onclick="hide_unhide()"><span class="text-semibold" id="calculator_acht" onclick="hide_unhide()"> Калькулятор ACHT&AUX</span></a></li>
+									<li><a href="https://helper.globalbilgi.com.ua/" target="_blank"><span class="text-semibold">Інструкції по встановленню ПЗ</span></a></li>
+									<li><a href="https://epitannya.globalbilgi.com.ua/" target="_blank"><span class="text-semibold">єПитання</span></a></li>
+									
+								</ul>
+							</li>
+							<li><a><i class="glyphicon glyphicon-stats"></i><span style="color:white"><b>Якість</b></span></a>
+								<ul>
+									<li><a href="file://172.21.65.4/CallCenter/Dnepr/Vladyslav%20Hlushko/1.%20Online%20%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0/IVR_webchat_evaluation%20today.mhtml" target="_blank"><span class="text-semibold">CSI за день</span></a></li>
+									<li><a href="file://172.21.65.4/CallCenter/Статистика_СС/CSI_per_period.docx" target="_blank"><span class="text-semibold">CSI за період</span></a></li>
+									<li><a href="file://172.21.65.15/webchat_lifecell/Project/My_lifecell/bin/Statistic/IVR_webchat_evaluation%20today.mhtml" target="_blank"><span class="text-semibold">CSI за день Web-chat</span></a></li>
+									<li hidden="hidden"><a href="\\gbukr.entp\data\Callcenter\Статистика_СС\Quality Team Report (day).mhtml" target="_blank"><span class="text-semibold">Звіт по якості за день</span></a></li>
+									<li hidden="hidden"><a href="\\gbukr.entp\data\Callcenter\Статистика_СС\Quality Team Report (period).mhtml" target="_blank"><span class="text-semibold">Звіт по якості за період</span></a></li>
+								</ul>
+							<li><a><i class="glyphicon glyphicon-stats"></i><span style="color:white"><b>Кількісні показники</b></span></a>
+								<ul>
+									<li><a href="file://172.21.65.4/CallCenter/Статистика/Agent Control Helper Astelit.mhtml" target="_blank"><span class="text-semibold">Статистика за день</span></a></li>
+									<li><a href="file:\\gbukr.entp\data\Callcenter\Статистика_СС\Статистика%20за%20период.html" target="_blank"><span class="text-semibold">Статистика за період </span></a></li>
+									<li><a href="file:\\gbukr.entp\data\CallCenter\Статистика_СС" target="_blank"><span class="text-semibold">Статистика CC</span></a></li>
+									<li><a href="https://pstat.globalbilgi.com.ua/" target="_blank"><span class="text-semibold">Індивідуальна статистика за день</span></a></li>
+									<li><a href="\\gbukr.entp\data\CallCenter\Dnepr\Vladyslav Hlushko\1. Online статистика\Webchat and Bip Statistics Momentary.mhtml" target="_blank"><span class="text-semibold">Momentary WebChat Statistics</span></a></li>
+									<li><a href="//172.21.65.4/CallCenter/Dnepr/Vladyslav%20Hlushko/1.%20Online%20%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0/Webchat%20and%20Bip%20Statistics%20Momentary.html" target="_blank"><span class="text-semibold">WebChat&BiP Agent Statistics</span></a></li>
+								</ul>
+							<li><a><i class="glyphicon glyphicon-stats"></i><span><b>Статистики</b></span></a>
+								<ul>
+									<li><a href="https://dashboard.globalbilgi.com.ua/" target="_blank"><span title="Логін: короткий або цифровой. Пароль як у windows" class="text-semibold">Dashboard</span></a></li>
+									<li><a href="https://dashboard1.globalbilgi.com.ua/" target="_blank"><span title="Логін: короткий або цифровой. Пароль як у windows" class="text-semibold">Dashboard1</span></a></li>	
+								</ul>
+							</li>
+							<li><a href="https://schedulelunch.globalbilgi.com.ua/" target="_blank" data-toggle="tooltip" title="Логін у форматі: YRoshcha. Пароль як у windows"><i class="glyphicon glyphicon-cutlery"></i><span class="text-semibold"> Ланч</span></a></li>
+							<li><a href="https://servicedesk.gbukr.entp/" target="_blank" data-toggle="tooltip" title="Логін у форматі: YRoshcha. Пароль як у windows"><i class="glyphicon glyphicon-wrench"></i><span class="text-semibold"> Service desk</span></a></li>
+
+							<li hidden="hidden"><a href="http://nitetest.gbukr.entp:81/default/" target="_blank" data-toggle="tooltip" title="Логін у форматі: YRoshcha. Пароль як у windows"><i class="glyphicon glyphicon-education"></i><span class="text-semibold"> Тестування</span></a></li>
+							<li><a href="https://learning-space.volia.com/default?logout=1" target="_blank" data-toggle="tooltip" title=""><i class="glyphicon glyphicon-education"></i><span class="text-semibold"> Навчання</span></a></li>
+							<!--
+							<li hidden="hidden"><a href="http://dneprcc.astelit.ukr/jokers.php" target="_blank" data-toggle="tooltip" title="Логін у форматі: YRoshcha. Пароль як у windows"><i class="glyphicon glyphicon-warning-sign"></i><span class="text-semibold"> Попередження</span></a></li>
+							<li hidden="hidden"><a href="http://dneprcc.astelit.ukr" target="_blank" data-toggle="tooltip"><i class="glyphicon glyphicon-transfer"></i><span class="text-semibold"> Старый Мой life</span></a></li>
+						-->
+							<li><a id="command" onclick="hide_unhide()"><i class="icon-users4"></i><span class="text-semibold" id="command" onclick="hide_unhide()"> Команда TL</span></a></li>
+							<!--<li><a href="https://rase1q.github.io/simple-excel-table/index.html" target="_blank" data-toggle="tooltip" title=""><i class="glyphicon glyphicon-list-alt"></i><span class="text-semibold"style="color: yellow"> Проміжні результати конкурсу</span></a></li>
+							<!--<li><a href="Ruslan_Zadorozhnii.html" target="_blank" data-toggle="tooltip"><i class="glyphicon glyphicon-upload"></i><span class="text-semibold"> Booster</span></a></li>-->
+						</ul>
+					</div>
+					</div>
+					<!-- /main navigation -->
+				</div>
+			</div>
+			<!-- /main sidebar -->
+			<!-- Main content -->
+			<div class="content-wrapper-fluid">
+				<!-- Page header -->
+				<!-- /page header -->
+				<!-- Content area -->
+				<div class="content">
+					<div class="row" style="margin-left: 10px">
+						<div class="col-lg-12 col-md-12" id="main_1" >
+							<!--Monitoring TL-->
+							<div class="col-lg-12 col-md-12" style="display: flex; justify-content: space-around; flex-wrap: nowrap; overflow-x: auto; padding: 10px 0;">
+								<div class="panel panel-default" style="border: none; background: rgba(0,0,0,0.3); box-shadow: 0 0 8px 8px rgba(0,0,0,0.3);">
+								  <div class="panel-body" style="padding: 4px;">
+<div class="col-lg-12 col-md-12" style="display: flex; justify-content: space-around; flex-wrap: nowrap; overflow-x: auto; padding: 10px 0;">
+    <!-- Первый блок (широкий) -->
+    <div style="min-width: 180px; margin: 0 5px;">
+        <div class="monitoring_time_style"><span style="color: white; font-size: 10pt;">Сьогодні моніторять:<span></div>
+        <a href=\\gbukr.entp\webchat_lifecell\share\Project\My_lifecell\bin\js\Edit>
+            <img src="img/monitoring/default.png" style="width: 150px; height: 206px; margin-top: 5%;" class="image_monitoring">
+        </a>
+    </div>
+    
+    <!-- Утренний Inbound -->
+    <div style="min-width: 170px; margin: 0 5px;">
+        <div class="monitoring_time_style">
+            <label style="font-size: 10pt;">Inb: <label id="monitoring_time_morning_start">&nbsp;</label> - <label id="monitoring_time_morning_end">&nbsp;</label></label>
+            <img width="164" height="220" class="image_monitoring" id="monitoring_TL_morning" style="margin-top: 0px;">
+        </div>
+    </div>
+    
+    <!-- Вечерний Inbound -->
+    <div style="min-width: 170px; margin: 0 5px;">
+        <div class="monitoring_time_style">
+            <label style="font-size: 10pt;">Inb: <label id="monitoring_time_evening_start">&nbsp;</label> - <label id="monitoring_time_evening_end">&nbsp;</label></label>
+            <img width="164" height="220" class="image_monitoring" id="monitoring_TL_evening" style="margin-top: 0px;">
+        </div>
+    </div>
+    
+    <!-- Дополнительное фото -->
+    <div style="min-width: 170px; margin: 0 5px;">
+        <div class="monitoring_time_style">
+            <label style="font-size: 10pt;">Inb: <label id="monitoring_time_night_start">23:00</label> - <label id="monitoring_time_night_end">01:20</label></label>
+            <img width="164" height="220" class="image_monitoring" id="monitoring_TL_night" style="margin-top: 0px;">
+        </div>
+    </div>
+    
+    <!-- Утренний Telesales -->
+    <div style="min-width: 170px; margin: 0 5px;">
+        <div class="monitoring_time_style">
+            <label style="font-size: 10pt;">TS: <label id="monitoring_TS_time_morning_start">&nbsp;</label> - <label id="monitoring_TS_time_morning_end">&nbsp;</label></label>
+            <img width="164" height="220" class="image_monitoring" id="monitoring_TL_telesales_morning" style="margin-top: 0px;">
+        </div>
+    </div>
+    
+    <!-- Вечерний Telesales -->
+    <div style="min-width: 170px; margin: 0 5px;" id="telesales_weekends">
+        <div class="monitoring_time_style">
+            <label style="font-size: 10pt;">TS: <label id="monitoring_TS_time_evening_start">&nbsp;</label> - <label id="monitoring_TS_time_evening_end">&nbsp;</label></label>
+            <img width="164" height="220" class="image_monitoring" id="monitoring_TL_telesales_evening" style="margin-top: 0px;">
+        </div>
+    </div>
+</div>
+								  </div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4" style="margin-bottom: 1%" hidden="hidden">
+								<div class="panel panel-default" style="padding: 0px;padding-right: 7px; border: none; ">
+									<div class="panel-body" style="padding: 0px;" align="center">
+										<a href="best_of_CC/Статистика_команд_и_агентов_за_расчетный_период_(для_письма).xlsx"><button class="btn btn-primary" style="width: 100%">Статистика за розрахунковий період</button></a>
+									</div>
+								</div>
+							</div>
+							<!-- вывод картинок на главной странице MyLifecell под иконками мониторинга -->
+							<div class="col-lg-12 col-md-12">
+								<div class="panel panel-default" style="border: none; background: rgba(255,255,255,0.4); box-shadow: 0 0 8px 8px rgba(128, 128, 128, 0.4);">
+									<div class="panel-body" style="padding: 4px; background: #5d5d5a">
+										<img src="best_of_CC/18.12.19.png" style="width: 100%;"> 
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12">
+								<div class="panel panel-default" style="border: none; background: rgba(255,255,255,0.4); box-shadow: 0 0 8px 8px rgba(128, 128, 128, 0.4);">
+									<div class="panel-body" style="padding: 4px; background: #5d5d5a">
+										<img src="best_of_CC/Statistics_CC.png" style="width: 100%;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12" id="command_1" hidden="hidden">
+							<div class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4" align="center">
+								<div class="panel">
+									<div class="panel-body" style="padding: 0px">
+										<h3>Командa Inbound</h3>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-md-12 col-lg-12" >
+								<div class="col-md-2 col-lg-2">
+									<a href=""><img src="img/Inbound_TL/Yhertsoh.png" width="100%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href=""><img src="img/Inbound_TL/OChalyk.png" width="100%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href=""><img src="img/Inbound_TL/AZabrodska.png" width="100%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href=""><img src="img/Inbound_TL/MYaremchuk.png" width="100%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/YKostiuk.png" width="100%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/MAMaksymenko.png" width="104%" class="TL_foto"></a>
+							</div>
+							<div class="col-md-12 col-lg-12" >
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/AHrytsai.png" width="100%" class="TL_foto" style="margin-top: 10px"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/KBereza.png" width="100%" class="TL_foto" style="margin-top: 10px"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/KPcholkin.png" width="102%" class="TL_foto" style="margin-top: 10px"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/DFursov.png" width="100%" class="TL_foto" style="margin-top: 10px"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/ARomasenko.png" width="100%" class="TL_foto" style="margin-top: 10px"></a>
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/YPerevertailo.png" width="100%" class="TL_foto" style="margin-top: 10px"></a>
+							</div>
+							<div class="col-md-12 col-lg-12" >
+								</div>
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/Inbound_TL/VSerhieiev.png" width="100%" class="TL_foto" style="margin-top: 10px"></a>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4" align="center" style="margin-top:20px">
+								<div class="panel">
+									<div class="panel-body" style="padding: 0px">
+										<h3>Командa Telesales/Outbound</h3>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-lg-12 col-lg-offset-1 col-md-offset-1" >
+								<div class="col-md-2 col-lg-2">
+									<a href="#"><img src="img/telesales_TL/MBaranovskyi.png" width="100%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2" >
+									<a href="#"><img src="img/telesales_TL/DChernenko.png" width="100%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2" >
+									<a href="#"><img src="img/telesales_TL/VSKrypnyk.png" width="106%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2" >
+									<a href="#"><img src="img/telesales_TL/AYakymovych.png" width="107%" class="TL_foto"></a>
+								</div>
+								<div class="col-md-2 col-lg-2" >
+									<a href="#"><img src="img/telesales_TL/KAndroshchuk.png" width="105%" class="TL_foto"></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12" id="calculator_acht_1" hidden="hidden">
+							<div class="calculator__ACHT">
+								<!-- CALCULATOR FORM -->
+								<form class="calculator__form">
+									<!-- CALCULATOR ROW -->
+									<div>
+										<span class="label">Вкажіть Аснт за період</span>
+									</div>
+
+									<div id="a1" class="calculator__row">
+										<input class="calculator__display" id="acht_period" type="text">
+									</div>
+
+									<div>
+										<span class="label">Вкажіть кількість дзвінків за період</span>
+									</div>
+
+									<div id="a2" class="calculator__row">
+										<input class="calculator__display" id="call_period" type="text">
+									</div>
+
+									<div>
+										<span class="label">Вкажіть Аснт за сьогодні</span>
+									</div>
+
+									<div id="a3" class="calculator__row">
+										<input class="calculator__display" id="acht_day" type="text">
+									</div>
+
+									<div>
+										<span class="label">Вкажіть кількість дзвінків за сьогодні</span>
+									</div>
+
+									<div id="a4" class="calculator__row">
+										<input class="calculator__display" id="call_day" type="text">
+									</div>
+
+									<div id="a5" class="calculator__row">
+										<button type="button" value="Расчитать АСНТ" class="calculator__key calculator__key--equal" onclick="ACHT();">Розрахувати</button>
+									</div>
+
+									<div>
+										<span class="label">Розраховане ACHT на завтра</span>
+									</div>
+
+									<div id="a6" class="calculator__row">
+										<input class="calculator__display" id="acht_next_day" type="text" disabled>
+									</div>
+
+									<div id="a6" class="calculator__row">
+										<input class="calculator__display" id="smile_acht"  placeholder="Побажання :)" type="text" disabled>
+									</div>
+
+								</form>
+							</div>
+							<div id="main" class="calculator__AUX">
+
+								<form id="form2" class="calculator__form">
+
+									<div>
+										<span class="label">Вкажіть Staff time</span>
+									</div>
+
+									<div id="a1" class="calculator__row">
+										<input class="calculator__display" id="staff_time" type="text">
+									</div>
+
+									<div>
+										<span class="label">Вкажіть % AUX-а на сьогодні</span>
+									</div>
+
+									<div id="a2" class="calculator__row">
+										<input class="calculator__display" id="aux_today" placeholder="Вводить через точку!" type="text">
+									</div>
+
+									<div id="a5" class="calculator__row">
+										<button type="button" value="Расчитать AUX" class="calculator__key calculator__key--equal" onclick="AUX();">Нажми меня и я посчитаю</button>
+									</div>
+
+									<div>
+										<span class="label">Перевикористання AUX в хвилинах до 13%</span>
+									</div>
+
+									<div id="a3" class="calculator__row">
+										<input class="calculator__display" id="AUX_11" type="text" disabled="">
+									</div>
+
+									<div>
+										<span class="label">Перевикористання AUX в хвилинах до 15%</span>
+									</div>
+
+									<div id="a4" class="calculator__row">
+										<input class="calculator__display" id="AUX_15" type="text" disabled="">
+									</div>
+
+									<div id="a6" class="calculator__row">
+										<input class="calculator__display" id="smile_aux" placeholder="Побажання :)" type="text" disabled>
+									</div>
+								</form>
+							</div>
+						</div>
+
+
+				<input id="hide_div" hidden="hidden">
+				<input id="unhide_div" hidden="hidden">
+				<input id="div_stack_1" hidden="hidden">
+				</div>
+				<!-- /content area -->
+
+
+			</div>
+			<!-- /main content -->
+			<div class="footer text-semibold hello_text" style="margin-left: 10px; margin-bottom: -20px; width:100%">
+				<marquee width="98%">&copy; 2018-2025. for CC agents lifecell. Слава Україні! ♥</marquee>
+			</div>
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+<script type="text/javascript" src="js/functions.js"></script>
+</body>
+</html>
+
